@@ -1,0 +1,106 @@
+[versions] # ordered alphabetically
+antlr = "4.+"
+assertj = "3.+" 
+checksumPlugin = "1.2.0"
+clikt = "3.5.1"
+commonMark = "0.+"
+downloadTaskPlugin = "5.6.0"
+geantyref = "1.+"
+googleJavaFormat = "1.21.0"
+# must not use `+` because used in download URL
+graalVm = "23.0.2"
+graalVmJdkVersion = "17.0.10"
+# slightly hacky but convenient place so we remember to update the checksum
+graalVmSha256-macos-x64 = "14f4bd6417809905f86e786c779d0fc2feb840d7dac35ae3503eb25af0530da0"
+graalVmSha256-macos-aarch64 = "e944c5ce5da56e683fc8f1a57191b46d9cb702930b1688bda064fcf467d876b8"
+graalVmSha256-linux-x64 = "112dc9b92d81a946f1b5b334646151b790785c813e76fcf13527a319003d7e2c"
+graalVmSha256-linux-aarch64 = "c95ac550d070f06666cf8c1023a098380dd565be00866473caf6ff1b7cdf680c"
+graalVmSha256-windows-x64 = "1ab2291e71f54d73e3e57b7fccbf184cabcba37e16ca9d1cf42d08474a7c02f0"
+ideaExtPlugin = "1.1"
+javaPoet = "1.+"
+javaxInject = "1"
+jansi = "2.+"
+jimfs = "1.+"
+# 3.25.1 doesn't work with native image
+jline = "3.23.0"
+jmh = "1.+"
+jmhPlugin = "0.6.6"
+jsch = "0.1.55"
+jsr305 = "3.+"
+junit = "5.+"
+kotlin = "1.7.10"
+# 1.7+ generates much more verbose code
+kotlinPoet = "1.6.+"
+# freeze until updating Kotlin version
+kotlinxHtml = "0.8.1"
+# freeze until updating Kotlin version
+kotlinxSerialization = "1.5.1"
+ktfmt = "0.44"
+# replaces nuValidator's log4j dependency
+# something related to log4j-1.2-api is apparently broken in 2.17.2
+log4j = "2.17.1"
+msgpack = "0.9.0"
+nexusPublishPlugin = "1.3.0"
+nuValidator = "20.+"
+paguro = "3.+"
+shadowPlugin = "8.1.1"
+slf4j = "1.+"
+# Breaking change in snakeYaml 2.6 (removing DumpSettingsBuilder::setScalarResolver), so pin to 2.5
+snakeYaml = "2.5"
+spotlessPlugin = "6.11.0"
+
+[libraries] # ordered alphabetically
+antlr = { group = "com.tunnelvisionlabs", name = "antlr4", version.ref = "antlr" }
+antlrRuntime = { group = "com.tunnelvisionlabs", name = "antlr4-runtime", version.ref = "antlr" }
+assertj = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
+clikt = { group = "com.github.ajalt.clikt", name = "clikt", version.ref = "clikt" }
+commonMark = { group = "org.commonmark", name = "commonmark", version.ref = "commonMark" }
+commonMarkTables = { group = "org.commonmark", name = "commonmark-ext-gfm-tables", version.ref = "commonMark" }
+downloadTaskPlugin = { group = "de.undercouch", name = "gradle-download-task", version.ref = "downloadTaskPlugin" }
+geantyref = { group = "io.leangen.geantyref", name = "geantyref", version.ref = "geantyref" }
+graalCompiler = { group = "org.graalvm.compiler", name = "compiler", version.ref = "graalVm" }
+graalSdk = { group = "org.graalvm.sdk", name = "graal-sdk", version.ref = "graalVm" }
+graalJs = { group = "org.graalvm.js", name = "js", version.ref = "graalVm" }
+javaPoet = { group = "com.squareup", name = "javapoet", version.ref = "javaPoet" }
+javaxInject = { group = "javax.inject", name = "javax.inject", version.ref = "javaxInject" }
+jansi = { group = "org.fusesource.jansi", name = "jansi", version.ref = "jansi" }
+jimfs = { group = "com.google.jimfs", name = "jimfs", version.ref = "jimfs" }
+jlineReader = { group = "org.jline", name = "jline-reader", version.ref = "jline" }
+jlineTerminal = { group = "org.jline", name = "jline-terminal", version.ref = "jline" }
+jlineTerminalJansi = { group = "org.jline", name = "jline-terminal-jansi", version.ref = "jline" }
+jsch = { group = "com.jcraft", name = "jsch", version.ref = "jsch" }
+jsr305 = { group = "com.google.code.findbugs", name = "jsr305", version.ref = "jsr305" }
+junitApi = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
+junitEngine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+junitParams = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit" }
+kotlinCompilerEmbeddable = { group = "org.jetbrains.kotlin", name = "kotlin-compiler-embeddable", version.ref = "kotlin" }
+kotlinPlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlinPoet = { group = "com.squareup", name = "kotlinpoet", version.ref = "kotlinPoet" }
+kotlinReflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+kotlinScriptingCompilerEmbeddable = { group = "org.jetbrains.kotlin", name = "kotlin-scripting-compiler-embeddable", version.ref = "kotlin" }
+kotlinScriptUtil = { group = "org.jetbrains.kotlin", name = "kotlin-script-util", version.ref = "kotlin" }
+kotlinStdLib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
+kotlinxHtml = { group = "org.jetbrains.kotlinx", name = "kotlinx-html-jvm", version.ref = "kotlinxHtml" }
+kotlinxSerializationJson = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+log4j12Api = { group = "org.apache.logging.log4j", name = "log4j-1.2-api", version.ref = "log4j" }
+msgpack = { group = "org.msgpack", name = "msgpack-core", version.ref = "msgpack" }
+nuValidator = { group = "nu.validator", name = "validator", version.ref = "nuValidator" }
+# to be replaced with https://github.com/usethesource/capsule or https://github.com/lacuna/bifurcan
+paguro = { group = "org.organicdesign", name = "Paguro", version.ref = "paguro" }
+pklConfigJavaAll025 = { group = "org.pkl-lang", name = "pkl-config-java-all", version = "0.25.0" }
+shadowPlugin = { group = "com.github.johnrengelman", name = "shadow", version.ref = "shadowPlugin" }
+slf4jApi = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j" }
+slf4jSimple = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j" }
+snakeYaml = { group = "org.snakeyaml", name = "snakeyaml-engine", version.ref = "snakeYaml" }
+spotlessPlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotlessPlugin"}
+svm = { group = "org.graalvm.nativeimage", name = "svm", version.ref = "graalVm" }
+truffleApi = { group = "org.graalvm.truffle", name = "truffle-api", version.ref = "graalVm" }
+truffleDslProcessor = { group = "org.graalvm.truffle", name = "truffle-dsl-processor", version.ref = "graalVm" }
+
+[plugins] # ordered alphabetically
+checksum = { id = "org.gradle.crypto.checksum", version.ref = "checksumPlugin" }
+ideaExt = { id = "org.jetbrains.gradle.plugin.idea-ext", version.ref = "ideaExtPlugin" }
+jmh = { id = "me.champeau.jmh", version.ref = "jmhPlugin" }
+kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+nexusPublish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexusPublishPlugin" }
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadowPlugin" }
